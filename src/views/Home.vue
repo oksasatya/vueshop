@@ -11,6 +11,9 @@
     components: {
       HelloWorld,
     },
+    mounted() {
+      console.log(process.env)
+    },
     created(){
     window.axios.get('http://larashop-api.test/buku/php')
       .then((response) => {
