@@ -4,42 +4,36 @@
       app
       color="primary"
       dark
+      extended
     >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+    
+    <v-app-bar-nav-icon></v-app-bar-nav-icon>
+    <v-toolbar-title class="font-weight-light">VueShop</v-toolbar-title>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
+    
       <v-spacer></v-spacer>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
+        
+          
+              <v-btn icon to="/about">
+                <v-badge color="orange" overlap>
+                  <template v-slot:badge>
+                    <span>3</span>
+                  </template>
+                  <v-icon>mdi-cart</v-icon>
+                </v-badge>
+              </v-btn>
 
-    <v-main>
-      <router-view/>
-    </v-main>
+          <v-text-field slot="extension" append-icon="mdi-microphone" flat label="search" prepend-inner-icon="mdi-magnify"></v-text-field>
+        
+      </v-app-bar>
+      <v-content>
+        <v-container fluid>
+          <v-slide-y-transition mode="out-in">
+          <router-view></router-view>
+          </v-slide-y-transition>
+        </v-container>
+      </v-content>
   </v-app>
 </template>
 
