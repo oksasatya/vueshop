@@ -22,6 +22,22 @@
       .catch((error) => {
           console.log(error)
       })
-    }
+    },
+    data: () => ({
+      categories: [
+        {
+          id:1,
+          image : 'http://via.placeholder.com/150',
+          name : 'Ekonomi',
+          slug : 'ekonomi'
+        },
+        {
+          id : 2,
+          image : 'http://via.placeholder.com/150',
+          name : 'Komputer',
+          slug : 'komputer'
+        }
+      ],
+    }),
   }
 </script>
