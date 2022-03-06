@@ -30,7 +30,7 @@
     </v-content>
 
     <v-card>
-      <v-navigation-drawer app v-model="drawer">
+      <!-- <v-navigation-drawer app v-model="drawer">
         <div class="pa-2" v-if="guest">
           <v-btn block color="primary" class="mb-1">
             <v-icon left>mdi-lock</v-icon>
@@ -73,7 +73,7 @@
             </v-btn>
           </div>
         </template>
-      </v-navigation-drawer>
+      </v-navigation-drawer> -->
 
       <v-footer absolute app>
         <v-card-text class="text-center">
