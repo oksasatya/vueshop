@@ -15,7 +15,7 @@
         >
           <v-card :to="'/category/' + category.slug">
             <v-img
-              :src="'http://127.0.0.1:8000/images/categories' + category.image"
+              :src="getImage('categories' + category.image)"
               class="white--text"
             >
               <v-card-title
@@ -38,7 +38,7 @@
       <v-layout wrap>
         <v-flex v-for="book in books" :key="`book-` + book.id" xs6>
           <v-card :to="'/book/' + book.slug">
-            <v-img :src="book.cover" class="white--text">
+            <v-img :src="getImage('books/' + book.cover)" class="white--text">
               <v-card-title class="fill-height align-end" v-text="book.title">
               </v-card-title>
             </v-img>
@@ -52,32 +52,7 @@
 <script>
 export default {
   data: () => ({
-    books: [
-      {
-        id: 1,
-        cover: "http://via.placeholder.com/150",
-        title: "laravel 5.8",
-        slug: "laravel-5.8",
-      },
-      {
-        id: 2,
-        cover: "http://via.placeholder.com/150",
-        title: "vuejs 2",
-        slug: "vuejs-2",
-      },
-      {
-        id: 3,
-        cover: "http://via.placeholder.com/150",
-        title: "php 7",
-        slug: "php-7",
-      },
-      {
-        id: 4,
-        cover: "http://via.placeholder.com/150",
-        title: "nodejs",
-        slug: "nodejs",
-      },
-    ],
+    books: [],
     categories: [],
   }),
   created() {
@@ -88,6 +63,17 @@ export default {
       .then((response) => {
         let { data } = response.data;
         this.categories = data;
+      })
+      .catch((error) => {
+        let { response } = error;
+        console.log(response);
+      });
+
+    this.axios
+      .get("/books/top/5")
+      .then((response) => {
+        let { data } = response.data;
+        this.books = data;
       })
       .catch((error) => {
         let { response } = error;

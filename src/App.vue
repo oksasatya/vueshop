@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar app color="primary" dark extended>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title class="font-weight-light">VueShop</v-toolbar-title>
+      <v-toolbar-title class="font-weight-light">{{ appname }}</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn icon to="/about">
         <v-badge color="orange" overlap>
