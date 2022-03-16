@@ -1,7 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import Categories from "../views/categories.vue";
+import Categories from "../views/Categories.vue";
+import Books from "../views/Books.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -21,9 +22,14 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   {
-    path: "/categories",
+    path: "/Categories",
     name: "categories",
     component: Categories,
+  },
+  {
+    path: "/Books",
+    name: "books",
+    component: Books,
   },
 ];
 
