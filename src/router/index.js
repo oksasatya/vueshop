@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Categories from "../views/Categories.vue";
 import Books from "../views/Books.vue";
+import CategorySlug from "../views/Category.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -30,6 +31,12 @@ const routes = [
     path: "/Books",
     name: "books",
     component: Books,
+  },
+
+  {
+    path: "/category/:slug",
+    name: "category",
+    component: CategorySlug,
   },
 ];
 
